@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="../assets/styles/settings.css">
+</head>
+
+<body>
+  <main>
+    <header>
+      <img id="popupIcon" src="../assets/icons/default.png" alt="icon" />
+      <h1>Site Blocker Options</h1>
+    </header>
+    <h2 id="tableHeading" class="sectionHeading">Table of contents</h2>
+    <section id="table">
+      <ol>
+        <a href="#guidebookHeading" class="contentLink">
+          <li>
+            Guidebook
+          </li>
+        </a>
+        <a href="#blockedHeading" class="contentLink">
+          <li>Blocked sites</li>
+        </a>
+        <a href="#wildcardHeading" class="contentLink">
+          <li>Change wildcard character</li>
+        </a>
+        <a href="#redirectHeading" class="contentLink">
+          <li>Change redirect URL</li>
+        </a>
+        <a href="#faqHeading" class="contentLink">
+          <li>FAQ</li>
+        </a>
+        <a href="#reportHeading" class="contentLink">
+          <li>Report bugs/send feedback</li>
+        </a>
+        <a href="#donateHeading" class="contentLink">
+          <li>Donate</li>
+        </a>
+      </ol>
+    </section>
+    <h2 id="guidebookHeading" class="sectionHeading">Guidebook</h2>
+    <section id="guidebook">
+      <h3>Introduction</h3>
+      <div>
+        <p>
+          Welcome to the Site Blocker guidebook! In the following chapters you will find summarized documentation
+          of the Site Blocker Chrome extension and its many capabilities.
+        </p>
+        <p>
+          If you are looking for help regarding a specific issue, please check the <a href="#faqHeading">FAQ below</a>.
+        </p>
+      </div>
+      <h3>What it does</h3>
+      <div>
+        <p>
+          Site Blocker is designed to be the "be all, end all" of site blockers for Chrome.
+          Site Blocker allows users to completely block websites as well as specific parts of websites.
+          Blocking a website with Site Blocker will block it everywhere (blocking facebook.com will
+          block facebook embeds - works the same with reddit, twitter, youtube, etc.) and blocking specific
+          patterns/keywords is also possible (users can block every website with the name "Paul" in its URL, etc.).
+        </p>
+      </div>
+      <h3>
+        How to use
+      </h3>
+      <div>
+        <p>
+          Left-mouse clicking the Site Blocker extension icon in the Chrome toolbar or menu will summon
+          the Site Blocker extension pop-up window. This window is where you will enter websites
+          to block, choose block options and see help/examples (visible by left-mouse clicking the "Show help"
+          and "Show example" buttons). Although the pop-up window examples are meant to be helpful, they are not
+          comprehensive.
+          Many of the block options can be used in creative ways not shown in the examples (especially when using the
+          wildcard character).
+        </p>
+      </div>
+      <h3>
+        The wildcard character
+      </h3>
+      <div>
+        <p>
+          The wildcard character is a character that will act as a generic placeholder for (almost) any text
+          (the wildcard character is set to: * by default). This allows you to block many different websites at once
+          and block complex URL patterns. The wildcard character has slightly different behavior depending on block
+          option,
+          and will be interpretted literally for the <b>Block exact URL</b> option (won't act as a generic placeholder).
+        </p>
+        <p>
+          Blocking <i>reddit.com/*/*</i> with the <b>Block URL and parent URL's</b> or <b>Block URL and child URL's</b>
+          options will block:
+          <i>reddit.com/u/abc</i>, <i>reddit.com/r/xyz</i>, etc. The wildcard character * in this case will match any
+          text that is not empty text or a slash.
+        </p>
+        <p>
+          Blocking <i>reddit.com/*/*</i> with the <b>Block keyword/pattern</b> option will work similarly, but the
+          wildcard character * in this case
+          will match any text including empty text and slashes. Most of the time, the difference in how the wildcard
+          character behaves
+          among block options will be unnoticeable.
+        </p>
+        <p>
+          If you wish to change the wildcard character from its * default, you can do so <a
+            href="#wildcardHeading">here</a>.
+        </p>
+      </div>
+      <h3>
+        The redirect URL
+      </h3>
+      <div>
+        <p>
+          You can set a custom URL to redirect blocked sites to. By default this URL will be empty and you will see a
+          "Your file was not found" page when you try to visit a blocked site. You can change your redirect URL <a
+            href="#redirectHeading">here</a>.
+        </p>
+      </div>
+      <h3 id="exact">Block exact URL</h3>
+      <div>
+        <p>
+          This option will block only one web address that exactly matches a given URL. You must include the
+          protocol (http:// or https://) at the beginning of the given URL for this option to work
+          correctly most of the time (<i>https://www.reddit.com</i> instead of <i>www.reddit.com</i> or
+          <i>reddit.com</i>).
+        </p>
+        <p>
+          This option should only be used in rare cases.
+        </p>
+      </div>
+      <h3 id="parent">Block URL and parent URL's</h3>
+      <div>
+        <p>
+          This option will block all web addresses that match a given URL or any of the URL's that precede it.
+        </p>
+        <p>
+          Blocking <i>reddit.com/r/*</i> with this option will block <i>reddit.com</i>, <i>reddit.com/r</i>,
+          <i>reddit.com/r/abc</i>, <i>reddit.com/r/xyz</i>, etc. but will not block <i>reddit.com/r/abc/xyz</i>.
+        </p>
+      </div>
+      <h3 id="child">Block URL and child URL's</h3>
+      <div>
+        <p>
+          This option will block all web addresses that match a given URL or any of the URL's that succeed it.
+        </p>
+        <p>
+          Blocking <i>reddit.com/r/*</i> with this option will block <i>reddit.com/r/abc</i>, <i>reddit.com/r/xyz</i>,
+          <i>reddit.com/r/abc/xyz</i>, etc. but will not block <i>reddit.com</i> or <i>reddit.com/r</i>.
+        </p>
+        <p>
+          Blocking just <i>reddit.com</i> with this option will block the website entirely.
+        </p>
+      </div>
+      <h3 id="keyword">Block keyword/pattern</h3>
+      <div>
+        <p>
+          This option will block every web address containing a given keyword or pattern in its URL.
+        </p>
+        <p>
+          For example, blocking <i>reddit</i> will block <i>reddit.com</i>, <i>reddit.com/r/abc</i>,
+          <i>google.com/search?q=reddit</i>, <i>wikipedia.org/wiki/reddit</i>, etc.
+        </p>
+        <p>
+          This is the most powerful block option and should be used responsibly, be careful when blocking common
+          keywords/patterns!
+        </p>
+      </div>
+    </section>
+    <h2 id="blockedHeading" class="sectionHeading">Blocked sites (<span id="numItems"></span>)</h2>
+    <section id="blocked">
+      <button id="importList">Import sites from text file</button>
+      <button id="downloadList">Download table as text file</button>
+      <table>
+        <thead>
+          <tr>
+            <th>Site</th>
+            <th>Block option</th>
+            <th><button id="unblockAll" class="unblockBtn">Unblock all</button></th>
+          </tr>
+        </thead>
+        <tbody id="blacklistTable">
+        </tbody>
+      </table>
+    </section>
+    <h2 id="wildcardHeading" class="sectionHeading">Change wildcard character</h2>
+    <section id="wildcard">
+      <p>Your current wildcard character is: <span id="specialSpan"></span></p>
+      <label>New wildcard character:</label>
+      <input id="changeSpecial" maxlength="1" type="text" />
+      <button id="changeSpecialBtn">Submit</button>
+      <div id="error" class="alert hidden"><span id="errorMsg"></span><span id="closeBtn">&times;</span></div>
+    </section>
+    <h2 id="redirectHeading" class="sectionHeading">Change redirect URL</h2>
+    <section id="redirect">
+      <p>Your current redirect URL is: <span id="redirectSpan"></span></p>
+      <label>New redirect URL:</label>
+      <input id="changeRedirect" type="text" />
+      <button id="changeRedirectBtn">Submit</button>
+      <p>
+        <b>Hint:</b> You must include the protocol (http:// or https://) at the beginning of the redirect URL for
+        redirection to work correctly most of the time. Set your redirect URL to <i>chrome://newtab</i> to redirect
+        blocked sites to your chrome new tab page.
+      </p>
+    </section>
+    <h2 id="faqHeading" class="sectionHeading">FAQ</h2>
+    <section id="faq">
+      
+      <h3>How do I unblock a website?</h3>
+      <div>
+        <p>
+          You can unblock a website by finding it in the <a href="#blockedHeading">Blocked sites</a> table and
+          left-mouse clicking
+          the "Unblock" button on the right. You can also left-mouse click the "Unblock all" button to unblock every
+          site in the
+          table.
+        </p>
+      </div>
+      <h3>How do I block a website and all of its pages?</h3>
+      <div>
+        <p>
+          You can do this with either the <a href="#child">Block URL and child URL's</a> or
+          <a href="#keyword">Block keyword/pattern</a> options.
+        </p>
+        <p>
+          <i>E.g. reddit.com, www.youtube.com, etc.</i>
+        </p>
+      </div>
+      <h3>How do I block a website and only some of its pages?</h3>
+      <div>
+        <p>
+          You can do this with either the
+          <a href="#parent">Block URL and parent URL's</a>,
+          <a href="#child">Block URL and child URL's</a> or
+          <a href="#keyword">Block keyword/pattern</a> options.
+        </p>
+      </div>
+      <h3>How do I block every website starting with/ending with/containing some pattern(s)?</h3>
+      <div>
+        <p>
+          You can do this with either the <a href="#child">Block URL and child URL's</a> or
+          <a href="#keyword">Block keyword/pattern</a> options.
+        </p>
+      </div>
+      <h3>Why am I shown a "Your file was not found" page?</h3>
+      <div>
+        This page will appear if you attempt to access a blocked site and
+        have not set a custom redirect URL. To see a different page when you attempt to access a blocked site please
+        change your redirect URL <a href="#redirectHeading">here</a>.
+      </div>
+      <h3>Why isn't content loading on an unblocked site?</h3>
+      <div>
+        <p>
+          Because you blocked it! This happens because
+          many unblocked sites will initiate images, videos, ads and other data from a blocked URL.
+        </p>
+      </div>
+      <h3>Why are blocked site embeds still appearing on other sites?</h3>
+      <div>
+        <p>
+          Social media (and other) embeds may still appear on the web after you have blocked their company sites. Even
+          though the embeds are still visible,
+          Site Blocker prevents these embeds from spying on you (embedded Facebook like
+          buttons will be benign in nature, etc.).
+        </p>
+      </div>
+      <h3>How do I block ads?</h3>
+      <div>
+        <p>
+          While you can block ads with this extension, I highly recommend you use an
+          <a href="https://chrome.google.com/webstore/search/adblock">ad-blocker</a> instead.
+          Many ads on the web are loaded from URL's with no relation to the actual ad content,
+          and finding the right URL/keyword to block is often a process of trial & error.
+        </p>
+      </div>
+      <h3>How do I reset the wildcard character?</h3>
+      <div>
+        <p>
+          The default wildcard character is *. You can change it <a href="#wildcardHeading">here</a>.
+        </p>
+      </div>
+      <h3>How do I reset the redirect URL?</h3>
+      <div>
+        <p>
+          Click the "Submit" button <a href="#redirectHeading">here</a>.
+        </p>
+      </div>
+      <h3>How do I enable this extension in incognito mode?</h3>
+      <div>
+        <p>
+          Right-mouse click the Site Blocker extension icon in the Chrome toolbar or menu and left-mouse
+          click the "Manage extensions" option to access the extension settings page. Left-mouse click on the
+          "Allow in incognito" toggle button if it is not already enabled.
+        </p>
+      </div>
+      </div>
+      <h3>How do I import blocked sites from a text file?</h3>
+      <div>
+        <p>
+          Click on the "Import sites from text file" button underneath <a href="#blockedHeading">Blocked sites</a> for
+          more information.
+        </p>
+      </div>
+      <h3>How do I sync my blocked sites across multiple devices?</h3>
+      <div>
+        <p>
+          Due to the limited capacity of Chrome online storage, the ability to sync blocked sites across multiple
+          devices has been removed.
+          To share blocked sites across devices please <a href="#downloadList">download your blocked sites as a text
+            file</a> then
+          <a href="#importList">import your blocked sites</a> to your other devices.
+        </p>
+      </div>
+      <h3>How do I remove this extension?</h3>
+      <div>
+        <p>
+          Right-mouse click the Site Blocker extension icon in the Chrome toolbar or menu and left-mouse
+          click the "Remove from Chrome..." option in the spawned menu to remove this extension from your browser.
+        </p>
+      </div>
+      <h3>Can I block a website with two or more block options?</h3>
+      <div>
+        <p>
+          No, if you feel the need to use two or more block options for a desired effect - there should be a way to
+          achieve it with
+          only one block option. If you're stuck please feel free to contact me.
+        </p>
+      </div>
+      <h3>Can I whitelist websites?</h3>
+      <div>
+        <p>
+          Not right now.
+        </p>
+      </div>
+      <h3>Does this extension track me?</h3>
+      <div>
+        <p>
+          Yes, but I can't access any of your data. Google on the other hand...
+        </p>
+      </div>
+      <h3>Do you accept donations?</h3>
+      <div>
+        <p>
+          Yes, see below!
+        </p>
+      </div>
+      <h3>What are your plans for this extension's future?</h3>
+      <div>
+        <p>
+          Continued maintenance, updates, support and a version for Firefox (maybe).
+        </p>
+      </div>
+    </section>
+    <h2 id="reportHeading" class="sectionHeading">Report bugs/send feedback</h2>
+    <section id="report">
+      <p>
+        For now, please e-mail me at: <a href=""></a>.
+        If you're reporting a bug/unexpected behavior, please include the site you blocked and its block option in your
+        message (exact URL, URL and parents, URL and children or keyword/pattern).
+      </p>
+    </section>
+    </section>
+    <h2 id="donateHeading" class="sectionHeading">Donate</h2>
+    <section id="donate">
+      <h3><img src="../assets/icons/blabla.svg" alt="icon" />PayPal</h3>
+      <a href="" target="_blank"></a>
+      <p>
+        The link above is preferred (paypal account required). You can also use the below donate button, which allows
+        credit card payment and
+        recurring donations, but PayPal will take a percentage of the donation for themselves. Thank you!
+      </p>
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+        <input type="hidden" name="cmd" value="_donations" />
+        <input type="hidden" name="business" value="" />
+        <input type="hidden" name="currency_code" value="USD" />
+        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" name="submit"
+          title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+      </form>
+    </section>
+  </main>
+  <div id="importModal" class="hidden modal">
+    <div class="modalContent">
+      <span id="closeImportModal">&times;</span>
+      <div id="importInfo">
+        <p>
+          You can import any text file with a list of sites seperated by commas or whitespace.
+        </p>
+        <p>
+          Optionally, if you want to define block options for the sites in your text file, you can write your desired
+          block option(s) preceded by two asterisks (**) in the file itself.
+          Any site that is below a defined block option in your file will be automatically blocked with that block
+          option when imported (see the second example below).
+        </p>
+        <p>
+          Sites that are not below a defined block option in your file will be blocked with the <strong>Block URL and
+            child URL's</strong> option by default.
+        </p>
+      </div>
+      <div id="importListExamples">
+        <div>
+          Example of a valid list <strong>without</strong> block options:
+          <div class="importListExample">
+            <pre>
+facebook
+www.reddit.com/r/*
+www.youtube.com
+yahoo.com
+bing.com/fun
+https://msn.com/
+
+
+
+
+                </pre>
+          </div>
+        </div>
+        <div>
+          Example of a valid list <strong>with</strong> block options:
+          <div class="importListExample">
+            <pre>
+**Block keyword/pattern
+facebook
+**Block URL and child URL's
+www.reddit.com/r/*
+www.youtube.com
+yahoo.com
+**Block URL and parent URL's
+bing.com/fun
+**Block URL and exact URL
+https://msn.com/
+                </pre>
+          </div>
+        </div>
+      </div>
+      <input id="fileInput" accept="text/plain" type="file" />
+      <button id="submitImportModal">Submit</button>
+    </div>
+  </div>
+  <div id="optionModal" class="hidden modal">
+    <div class="modalContent">
+      <span id="closeOptionModal">&times;</span>
+      <span id="modalSite">
+        Block option for
+        <span id="modalSiteText"></span>
+      </span>
+      <label class="container">
+        <input id="exact" class="optionBtn" type="radio" name="option" value="Blocking exact URL" />
+        Block exact URL
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">
+        <input id="parent" class="optionBtn" type="radio" name="option" value="Blocking URL and parent URL's" />
+        Block URL and parent URL's
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">
+        <input id="child" class="optionBtn" type="radio" name="option" value="Blocking URL and child URL's" />
+        Block URL and child URL's
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">
+        <input id="keyword" class="optionBtn" type="radio" name="option" value="Blocking keyword/pattern" />
+        Block keyword/pattern
+        <span class="checkmark"></span>
+      </label>
+      <button id="submitOptionModal">Submit</button>
+    </div>
+  </div>
+</body>
+<script src="../assets/scripts/script_setts.js"></script>
+
+</html>

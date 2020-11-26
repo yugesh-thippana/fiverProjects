@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="../assets/styles/pp.css" />
+    <link rel="stylesheet" href="../assets/styles/button2.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+
+  </head>
+
+  <body>
+    <header>
+      <div>
+        <img id="popupIcon" src="../assets/icons/default.png" alt="icon" />
+        <h1>Site Blocker</h1>
+      </div>
+      <a href="../settings/settings.html" target="_blank">
+        <img id="settingsIcon" src="../assets/icons/setts.png" alt="settings" />
+      </a>
+    </header>
+    <main>
+      <section>
+        <div id="exactEx" class="hidden">
+          <h2>Enter URL to block:</h2>
+          <p>E.g. https://en.wikipedia.org/wiki/GNU, etc.</p>
+        </div>
+        <div id="parentEx" class="hidden">
+          <h2>Enter web address to block:</h2>
+          <p>E.g. reddit.com/r/all, en.wikipedia.org/wiki/GNU, etc.</p>
+        </div>
+        <div id="childEx">
+          <h2>Enter web address to block:</h2>
+          <p>E.g. facebook.com, www.youtube.com, etc.</p>
+        </div>
+        <div id="keywordEx" class="hidden">
+          <h2>Enter keyword/pattern to block:</h2>
+          <p>E.g. Paul, reddit, tube, /r/all, etc.</p>
+        </div>
+        <input type="text" id="siteInput" />
+        <div class="text-box">
+          <div id = "useCurrentBtn"> Block Current URL</div>
+      </div>
+      <div class = "flexx">
+        <div class = "timer"  >         </div>
+        <button type = "button" style = "visibility:hidden;" class = "stopp" >
+        <label class = "label-stop">   STOP  </label> 
+        </button>
+      </div>
+        <div id="error" class="alert hidden">
+          <span id="errorMsg"></span><span class="closeBtn">&times;</span>
+        </div>
+        <div id="success" class="alert hidden">
+          <span id="successMsg"></span><span class="closeBtn">&times;</span>
+        </div>
+        <div id="options">
+          <label class="container">
+            <input
+              id="exact"
+              class="optionBtn"
+              type="radio"
+              name="option"
+              value="Blocking exact URL"
+            />
+            Block exact URL
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">
+            <input
+              id="parent"
+              class="optionBtn"
+              type="radio"
+              name="option"
+              value="Blocking URL and parent URL's"
+            />
+            Block URL and parent URL's
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">
+            <input
+              id="child"
+              class="optionBtn"
+              type="radio"
+              name="option"
+              value="Blocking URL and child URL's"
+            />
+            Block URL and child URL's
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">
+            <input
+              id="keyword"
+              class="optionBtn"
+              type="radio"
+              name="option"
+              value="Blocking keyword/pattern"
+            />
+            Block keyword/pattern
+            <span class="checkmark"></span>
+          </label>
+        </div>
+      </section>
+      <button id="blockBtn">Block site</button>
+
+      <a href="../settings/settings.html#blockedHeading" id="viewBlocked" target="_blank"
+        >View blocked sites</a
+      >
+      <button id="showHelp" class="helpBtn">Show help</button>
+      <button id="hideHelp" class="hidden helpBtn">Hide help</button>
+      <section id="help" class="hidden">
+        <div id="exactInfo" class="info hidden">
+          <h2>Block exact URL</h2>
+          <p>
+            <b>For advanced users only.</b><br />
+            This option will block only one web address that exactly matches the
+            given URL.
+          </p>
+          <h3>When to use this option</h3>
+          <p>
+            Use this option if you want to block one specific website (the other
+            options will usually be more useful).
+          </p>
+          <button class="exampleBtn"><span>Show</span> example</button>
+          <div class="example hidden">
+            <h3>E.g. <i>https://www.reddit.com</i></h3>
+            <h4>This option will block the following website:</h4>
+            <ul>
+              <li><b>https://www.reddit.com</b></li>
+            </ul>
+            <h4>This option will not block the following websites:</h4>
+            <ul>
+              <li>https://www.reddit.com/r</li>
+              <li>https://www.reddit.com/r/all</li>
+              <li>https://www.reddit.com/r/all/top</li>
+              <li>etc.</li>
+            </ul>
+          </div>
+          <aside>
+            <b>Note:</b> you must include the protocol (http:// or https://) at
+            the beginning of the given URL for this option to successfully block
+            most web addresses.
+          </aside>
+          <br />
+        </div>
+        <div id="parentInfo" class="info hidden">
+          <h2>Block URL and parent URL's</h2>
+          <p>
+            This option will block web addresses matching the given URL and any
+            URL that is <b>within</b> the given URL.
+          </p>
+          <h3>When to use this option</h3>
+          <p>
+            Use this option if you want to block a website's main page(s) but
+            still be able to visit its minor pages.
+          </p>
+          <button class="exampleBtn"><span>Show</span> example 1</button>
+          <div class="example hidden">
+            <h3>E.g. <i>www.reddit.com/r/all</i></h3>
+            <h4>This option will block the following websites:</h4>
+            <ul>
+              <li><b>www.reddit.com/r/all</b></li>
+              <li>www.reddit.com/r</li>
+              <li>www.reddit.com</li>
+              <li>etc.</li>
+            </ul>
+            <h4>This option will not block the following websites:</h4>
+            <ul>
+              <li>www.reddit.com/r/a</li>
+              <li><b>www.reddit.com/r/all/</b>top</li>
+              <li>www.reddit.com/r/Gentoo</li>
+              <li>www.reddit.com/r/Gentoo/comments/abc/xyz</li>
+              <li>etc.</li>
+            </ul>
+          </div>
+          <button class="exampleBtn"><span>Show</span> example 2</button>
+          <div class="example hidden">
+            <h3>E.g. <i>www.reddit.com/r/*</i></h3>
+            <h4>This option will block the following websites:</h4>
+            <ul>
+              <li><b>www.reddit.com/r/Gentoo</b></li>
+              <li><b>www.reddit.com/r/all</b></li>
+              <li>www.reddit.com/r</li>
+              <li>www.reddit.com</li>
+              <li>etc.</li>
+            </ul>
+            <h4>This option will not block the following websites:</h4>
+            <ul>
+              <li><b>www.reddit.com/r/all/</b>top</li>
+              <li><b>www.reddit.com/r/Gentoo/</b>comments/abc/xyz</li>
+              <li>etc.</li>
+            </ul>
+          </div>
+          <aside>
+            <b>Note:</b> you can use the <span class="special"></span> wildcard
+            character to represent a generic placeholder for any text (not
+            including empty text or slashes). Blocking only the
+            <span class="special"></span> character will block all web
+            addresses. You may change this character in
+            <a href=" ../settings/settings.html#wildcardHeading" target="_blank">Options</a>.
+          </aside>
+        </div>
+        <div id="childInfo" class="info">
+          <h2>Block URL and child URL's</h2>
+          <p>
+            This option will block web addresses matching the given URL and any
+            URL that <b>contains</b> the given URL.
+          </p>
+          <h3>When to use this option</h3>
+          <p>
+            Use this option if you want to block a website entirely or block a
+            website's minor pages but still be able to visit its main page(s).
+          </p>
+          <button class="exampleBtn"><span>Show</span> example 1</button>
+          <div class="example hidden">
+            <h3>E.g. <i>www.reddit.com/r/all</i></h3>
+            <h4>This option will block the following websites:</h4>
+            <ul>
+              <li><b>www.reddit.com/r/all</b></li>
+              <li><b>www.reddit.com/r/all/</b>top</li>
+              <li><b>www.reddit.com/r/all/</b>comments/abc/xyz</li>
+              <li>etc.</li>
+            </ul>
+            <h4>This option will not block the following websites:</h4>
+            <ul>
+              <li>www.reddit.com/r/allsvenskan</li>
+              <li>www.reddit.com/r/a</li>
+              <li>www.reddit.com/r</li>
+              <li>www.reddit.com</li>
+              <li>etc.</li>
+            </ul>
+          </div>
+          <button class="exampleBtn"><span>Show</span> example 2</button>
+          <div class="example hidden">
+            <h3>E.g. <i>www.reddit.com/r/*</i></h3>
+            <h4>This option will block the following websites:</h4>
+            <ul>
+              <li><b>www.reddit.com/r/all</b></li>
+              <li><b>www.reddit.com/r/all/</b>top</li>
+              <li><b>www.reddit.com/r/Gentoo</b></li>
+              <li><b>www.reddit.com/r/Gentoo/</b>comments/abc/xyz</li>
+              <li>etc.</li>
+            </ul>
+            <h4>This option will not block the following websites:</h4>
+            <ul>
+              <li>www.reddit.com</li>
+              <li>www.reddit.com/r</li>
+              <li>etc.</li>
+            </ul>
+          </div>
+          <aside>
+            <b>Note:</b> you can use the <span class="special"></span> wildcard
+            character to represent a generic placeholder for any text (not
+            including empty text or slashes). Blocking only the
+            <span class="special"></span> character will block all web
+            addresses. You may change this character in
+            <a href=" ../settings/settings.html#wildcardHeading" target="_blank">Options</a>.
+          </aside>
+        </div>
+        <div id="keywordInfo" class="info hidden">
+          <h2>Block keyword/pattern</h2>
+          <p>
+            This option will block all web addresses containing the given
+            keyword or pattern.
+          </p>
+          <h3>When to use this option</h3>
+          <p>
+            Use this option if you want to block every website that contains a
+            specific word or pattern in its URL.
+          </p>
+          <button class="exampleBtn"><span>Show</span> example</button>
+          <div class="example hidden">
+            <h3>E.g. <i>reddit</i></h3>
+            <h4>This option will block the following websites:</h4>
+            <ul>
+              <li>www.<b>reddit</b>.com</li>
+              <li>www.<b>reddit</b>.com/r/all/top</li>
+              <li>videos.<b>reddit</b>.com</li>
+              <li>www.<b>reddit</b>.org</li>
+              <li>www.google.com/search?q=<b>reddit</b></li>
+              <li>en.wikipedia.org/wiki/<b>reddit</b></li>
+              <li>etc.</li>
+            </ul>
+            <h4>This option will not block the following websites:</h4>
+            <ul>
+              <li>red.dit.com</li>
+              <li>etc.</li>
+            </ul>
+          </div>
+          <aside>
+            <b>Note:</b> you can use the <span class="special"></span> wildcard
+            character to represent a generic placeholder for any text (including
+            empty text). Blocking only the
+            <span class="special"></span> character will block all web
+            addresses. You may change this character in
+            <a href=" ../settings/settings.html#wildcardHeading" target="_blank">Options</a>.
+          </aside>
+        </div>
+      </section>
+    </main>
+    <script src="../assets/scripts/pp.js"></script>
+   
+  </body>
+</html>

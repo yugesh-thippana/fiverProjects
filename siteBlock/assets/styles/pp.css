@@ -1,0 +1,195 @@
+a {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+body {
+  margin: 0;
+  width: 340px;
+}
+
+
+
+body,
+main,
+main section:first-child,
+#options {
+  flex-direction: column;
+}
+body,
+header,
+header div,
+main,
+main section:first-child,
+.alert,
+.container,
+#options {
+  display: flex;
+}
+body,
+#siteInput {
+  font-family: "Source Sans Pro", Arial, sans-serif;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+header {
+  justify-content: space-between;
+}
+
+header,
+header div {
+  align-items: center;
+}
+
+header,
+main section {
+  padding: 8px;
+}
+
+
+h4,
+h5,
+h1,
+h2,
+h3,
+h6 {
+  margin: 0;
+}
+
+main section:first-child {
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #e6e6e6;
+  border-top: 1px solid #e6e6e6;
+}
+
+main section:first-child p {
+  font-style: italic;
+}
+
+main section:last-child {
+  background-color: #ffffaa;
+}
+
+#blockBtn {
+  font-size: 18px;
+  margin: 8px;
+}
+
+
+#grabCurrent {
+  margin-top: 6px;
+}
+#settingsIcon {
+  width: 24px;
+}
+#options {
+  display: flex;
+  flex-direction: column;
+  margin-top: 6px;
+  margin-bottom: 4px;
+}
+
+#error {
+  background-color: #cc0000;
+}
+
+
+
+#success {
+  background-color: #28a745;
+}
+
+#viewBlocked {
+  margin: 0 8px 4px 8px;
+  width: 112px;
+}
+
+.alert {
+  align-items: center;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  justify-content: space-between;
+  padding: 0 6px;
+}
+
+.closeBtn {
+  font-size: 22px;
+  transition: 0.3s;
+}
+
+.closeBtn:hover {
+  color: black;
+  cursor: pointer;
+}
+
+.container {
+  align-items: center;
+}
+
+.exampleBtn {
+  display: block;
+  margin-bottom: 12px;
+  width: 100px;
+}
+
+.exampleBtn,
+.helpBtn {
+  background: transparent;
+  border: none;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 0;
+  text-decoration: none;
+  text-align: left;
+}
+
+.exampleBtn:hover,
+.helpBtn:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.helpBtn {
+  margin: 4px 8px;
+  width: 66px;
+}
+
+.hidden {
+  display: none;
+}
+
+.info h3 {
+  margin-bottom: 12px;
+}
+
+.optionBtn {
+  margin: 6px;
+  transform: scale(1.2);
+}
+
+.optionBtn:hover {
+  cursor: pointer;
+}
+
+.special {
+  font-weight: bold;
+}
+#popupIcon {
+  height: 50px;
+  margin-right: 8px;
+  width: 50px;
+}
+#siteInput {
+  font-size: 16px;
+  height: 16px;
+  overflow: none;
+  padding: 8px;
+}

@@ -1,0 +1,127 @@
+body {
+    background-color: #1f8dd6;
+    height: 100vh;
+}
+.App {
+    height: 100vh;
+}
+.home-menu {
+    padding: .5em;
+    font-size: 0.75rem;
+    padding: 12px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.1);
+    background: #2d3e50;
+    color: white;
+}
+.about-us{
+    color: #6fbef3;
+    float: right;
+    font-size: 0.75rem;
+    cursor: pointer;
+}
+.alert{
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top : 12vh;
+}
+.main {
+    display : flex;
+    flex-direction: column;
+}
+.container {
+    width: 55%;
+    background-color: white;
+    margin : auto;
+    height: 60vh;
+    display : flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+*{
+    text-transform: uppercase;
+    padding: 0;
+    margin: 0;
+}
+button {
+    background-color: #1f8dd6;
+    color: #fff;
+    padding: .5rem 2rem;
+    border-radius: 5px;
+    margin : 20px;
+    outline : none;
+    border : none;
+}
+button:hover {
+    background-color: #2facff;
+}
+button:active {
+    transform: translate(-10px,1px);
+}
+.block{
+    display : flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.tag{
+    color : #7f8c8d
+}
+.line-bar-white {
+    width : 250px;
+    height : 5px;
+    background-color: #eeeeee;
+    z-index: 0;
+}
+.line-bar-blue {
+    height : 5px;
+    background: rgb(33, 150, 243);
+    position : relative ;
+    bottom : 5px;
+    z-index : 1;
+    transition: all 0.5s ease 0s;
+}
+.line-bar-blue1 {
+    max-width: 100%;
+    width: 100%;
+}
+.line-bar-blue2 {
+    width : 100%;
+    max-width: 100%;
+}
+.line-bar-blue3 {
+    width : 100%;
+    max-width: 100%;
+}
+.line-bar-blue4 {
+    width : 100%;
+    max-width: 100%;
+}
+.tag {
+    padding-bottom: 12px;
+    text-align: center;
+}
+/* .market , .minute-60 , .minute-30 , .minute-15 {
+    transform: translateY(-12px); 
+    
+} */
+.enabled {
+    transform: translate(-44px,15px);
+}
+button {
+    transform: translateX(-10px);
+}
+.market-position, .minute-position-15, .minute-position-30, .minute-position-60 {
+    font-size : 0.6rem;
+    text-align: center;
+    padding-top: 5px;
+    padding: 10px;
+}
+
+@media only screen and (max-width: 1100px) {
+    .line-bar-blue1, .line-bar-blue2, .line-bar-blue3, .line-bar-blue4{
+        max-width: 40%;
+    }
+    .line-bar-white {
+        width : 100px;
+    }
+  }

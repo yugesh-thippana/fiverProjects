@@ -1,0 +1,53 @@
+body {
+    background-color: #81d4fa;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing : border-box;
+}
+
+#useCurrentBtn {
+    display: block;
+    border: 2px solid rgba(0, 0, 0, 0.356);
+    margin: auto;
+    padding: 7px;
+    outline: none;
+    text-decoration: none;
+    margin-top : 20px;
+    text-align: center;
+    width: 70%;
+    cursor: pointer;
+    transition: all 0.3s;
+    background-color: rgba(127, 255, 212, 0.295);
+}
+#useCurrentBtn:hover {
+    background-color: rgb(248, 132, 132);
+    transform:scale(1.03);
+}
+.timer {
+    width : 15%;
+    float : left;
+    padding-left: 15%;
+    font-size: 1.8rem;
+}
+
+.stopp {
+    margin-left : 35%;
+    width: 25%;
+    transform: scale(1.4);
+    margin-top : 5px;
+    background-color : rgba(255, 0, 0, 0.897);
+    outline: none;
+    border : 1px solid rgba(255, 0, 0, 0.897);
+    padding : 3px 10px;
+
+}
+.stopp:hover {
+    background-color : rgba(255, 0, 0, 0.479);
+}
+.flexx {
+    margin: 10px;
+  
+}

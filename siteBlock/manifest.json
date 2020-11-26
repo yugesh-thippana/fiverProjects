@@ -1,0 +1,35 @@
+{
+   "background": {
+      "persistent": true,
+      "scripts": [ "assets/scripts/bk.js" ]
+   },
+   "content_scripts": [ {
+      "js": [ "assets/scripts/script.js" ],
+      "matches": [ "\u003Call_urls>" ]
+   } ],
+   "default_locale": "en",
+   "description": "Block websites partially or completely. Widgets on third-party sites will also be blocked.",
+   "icons": {
+      "128": "assets/icons/large.png",
+      "16": "assets/icons/small.png",
+      "32": "assets/icons/medium.png",
+      "48": "assets/icons/big.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAjAiQFPLOcF+joVefFb8SvPGzPfrPn5SWGw+UuyfSURWUUkr7gQ9oIIdJkhfrBOQem9hJzITIJql9Hpdvqxl+m94xyQpSruaOVo2KMrOdsCsFiu+JFctzXMfgzG94QZSCVCYkPZ4TaBkpUaGUuXHasjI1dcRbqOmCeIYyIodqyEKgszKyXoj9u8iyCFmCeo4sw8BWa2NX3c22nv6RImpyt/fAvoEfjZ/4iV60jLZaJG4mBZPHCCHZ3aETxsTvFzT5goCptxUwnEDVwlUzYPOKItnzxLZ6/cyzE3xYzW+aYTVIhKkTydF1MwukygwYvUgRwuoaj+RO0maDT1WkYkkLnwIDAQAB",
+   "manifest_version": 2,
+   "name": "Site Blocker",
+   "options_page": "./settings/settings.html",
+   "page_action": {
+      "default_icon": {
+         "128": "assets/icons/large.png",
+         "16": "assets/icons/small.png",
+         "32": "assets/icons/medium.png",
+         "48": "assets/icons/big.png"
+      },
+      "default_popup": "./popup/pp.html"
+   },
+   "permissions": [ "\u003Call_urls>", "declarativeContent", "storage", "tabs", "unlimitedStorage", "webRequest", "webRequestBlocking" ],
+   "short_name": "Site Blocker",
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.5"
+}

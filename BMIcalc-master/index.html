@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel = "stylesheet" href = "style.css"/>
+</head>
+<body>
+    <div class="bodyBMI">
+    <div class = "BMI">
+    
+        <h1 style = "font-family: Georgia, 'Times New Roman', Times, serif"> BMI </h1>
+
+        <b>Af </b>
+        <a href = "https://netdoktor.dk/hvemnd.htm"> Arne Astrup,</a>
+        <span> professor dr.med og </span>
+        <a href = "https://netdoktor.dk/hvemnd.htm"> Carl Brandt,</a> laege 
+        <br>
+        <br> <br> 
+
+        <b> Hvad er BMI?</b>
+
+        <p> BMI står for Body Mass Index og er en måde at finde ud af, om man er overvægtig eller undervægtig. BMI-testen udregner et tal, som fortæller noget om forholdet mellem din vægt og højde.</p>
+        <p> Bemærk, at BMI-tallet er en indikator og ikke kan bruges af for eksempel body-buildere, da deres muskelmasse giver dem højere vægt uden at de dermed er overvægtige, ligesom mennesker med kraftig kropsbygning kan have et BMI-tal der højere end 25, uden at være overvægtige</p>
+        <hr><br> 
+        
+        
+        <div style = "color: #9A0000;font-size: 20px; padding-bottom: 7px" > <b>Beregn dit BMI </b> </div>
+
+        <div style = "padding: 5px 0 5px 0;"><b> Indtast din vægt i kilo: </b></div>
+        <input type = "text" class = "weight" placeholder="Indtast din vægt" />
+        <div class="weightERR"></div>
+
+        <div style = "padding: 5px 0 5px 0;"> <b>Indtast din højde i centimeter:</b> </div>
+        <input type = "text" class = "height" placeholder="Indtast din højde" />
+        <div class="heightERR"></div>
+
+        <button class = "buttonBMI" >  Beregn dit BMI-tal </button>
+
+        <div class="resultBMI">  </div>
+
+        <ul>
+            <li> &nbsp;Under 18,5: Undervægtig</li>
+            <li> &nbsp;18,5-25: Normalvægtig</li>
+            <li> &nbsp;25-30: Overvægtig</li>
+            <li> &nbsp;Over 30: Svært overvægtig</li>
+        </ul>
+
+        <div style = "padding-bottom: 12px;"> Naturligvis er mennesker forskelligt bygget - derfor er der også en vis margin, som dit tal kan ligge indenfor.</div>
+        <div style = "padding-bottom: 12px;"><b>Overvægtig:</b> Hvis dit BMI er over 25 kan du teste mere grundigt om du <a href = "https://netdoktor.dk/interactive/interactivetests/bmi2.php">bør gøre noget ved din vægt. </a></div>
+        <div style = "padding-bottom: 12px;"> <b>Undervægtig:</b> Hvis dit BMI under 18,5 betegnes det derimod som undervægt. Er tallet under 16, betegnes det ifølge Verdenssundhedsorganisationen som alvorlig undervægt.</div>
+        <div style = "padding-bottom: 12px;"><b>HUSK:</b> Du kan få BMI-tallet ned uden hverken at pine dig selv eller sulte.<a href = "https://netdoktor.dk/madogkrop/artikler/overvaegtabsundt.htm"> Læs mere om hvordan du taber dig på en sund måde.</a></div>
+        <div style = "padding-bottom: 12px;"> <b>TIP:</b> Du kan eventuelt sidde og lege lidt med test-feltet herover for at finde ud af, hvor meget din vægt skal ned, før dit BMI-tal bliver tilfredsstillende.</div>
+        <div style = "padding-bottom: 20px;">Beregn også, om du er den farlige<a href = "https://netdoktor.dk/interactive/interactivetests/apple.php"> æble-type eller den mindre skadelige pæretype</a></div>
+    </div> </div> 
+    
+    <script src = "script.js"> </script>
+</body>
+</html>

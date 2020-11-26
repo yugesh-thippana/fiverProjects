@@ -1,0 +1,225 @@
+#donate h3 {
+  display: flex;
+  align-items: center;
+}
+
+#donate h3 img {
+  margin-right: 8px;
+}
+
+#error {
+  background-color: #cc0000;
+  margin-top: 14px;
+  width: 300px;
+}
+
+#fileInput {
+  width: 180px;
+}
+
+#fileInput:hover {
+  cursor: pointer;
+}
+
+#guidebook,
+#faq {
+  padding: 0 2em;
+}
+a {
+  font-size: 16px;
+}
+
+body {
+  font-size: 14px;
+  margin: 0;
+  padding: 1em 2em;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+h2 {
+  text-decoration: underline;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+pre {
+  background-color: #ffffaa;
+  border: 2px solid black;
+  padding: 10px;
+}
+
+table {
+  border-collapse: collapse;
+  font-family: arial, sans-serif;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+#changeSpecial {
+  width: 100px;
+}
+
+#closeBtn {
+  font-size: 22px;
+  transition: 0.3s;
+}
+
+
+#closeImportModal:hover,
+#closeOptionModal:hover {
+  color: black;
+  cursor: pointer;
+}
+#closeBtn:hover {
+  color: black;
+  cursor: pointer;
+}
+
+#closeImportModal,
+#closeOptionModal {
+  align-self: flex-end;
+  color: gray;
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  transition: 0.3s;
+  width: 40px;
+}
+
+
+
+#guidebook > div,
+#faq > div {
+  padding: 0 2em;
+}
+
+#importInfo {
+  margin-right: 20px;
+}
+
+#importList {
+  margin-right: 10px;
+  margin-bottom: 15px;
+}
+
+#importListExamples {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 20px;
+}
+
+#modalSite {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+#modalSiteText {
+  font-weight: bold;
+  font-style: italic;
+}
+
+#popupIcon {
+  height: 50px;
+  margin-right: 8px;
+  width: 50px;
+}
+
+
+.alert {
+  align-items: center;
+  color: white;
+  display: flex;
+  font-size: 12px;
+  font-weight: bold;
+  justify-content: space-between;
+  padding: 0 6px;
+}
+
+.container {
+  align-items: center;
+}
+
+.contentLink {
+  margin: 0.5em;
+}
+
+.hidden {
+  display: none;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.importListExample {
+  width: 300px;
+}
+
+.modal {
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 100%;
+  left: 0;
+  padding-top: 200px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.modalContent {
+  background-color: #fefefe;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding: 0 0 20px 20px;
+  width: 700px;
+}
+
+.optionBtn {
+  margin: 6px;
+  transform: scale(1.2);
+}
+
+.optionBtn:hover {
+  cursor: pointer;
+}
+
+.optionCell {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sectionHeading:hover {
+  cursor: pointer;
+}
+
+.unblockBtn:hover {
+  cursor: pointer;
+}
+
+#specialSpan {
+  font-weight: bold;
+}
+
+#submitImportModal,
+#submitOptionModal {
+  margin-top: 15px;
+  width: 60px;
+}
+
+#table {
+  background-color: #f9f9f9;
+}
